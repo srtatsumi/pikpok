@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name='viewport'>
+<title>Smart Print</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/boxicons.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style>
+  .orange-wrp{
+    margin-bottom:10px;
+  }
+  .container {
+    max-width: 1350px;
+    margin-top: -12px;
+  }
+  .head{
+    margin-left: 238px;
+    margin-top: -48px;
+  }
+  .left{
+    margin-left:26%;
+    width: 27%;
+  }
+  .right{
+    /*margin-right:26%;*/
+    width: 27%;
+  }
+  .accordion-body {
+      width: 700px;
+    }
+  .carousel-control-next, .carousel-control-prev{
+    opacity: 1;
+  }
+  .carousel-control-prev-icon{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3C!--! Font Awesome Pro 6.0.0 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z'/%3E%3C/svg%3E");
+
+  }
+  .carousel-control-next-icon{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3E%3C!--! Font Awesome Pro 6.0.0 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z'/%3E%3C/svg%3E");
+  }
+    .carousel-control-next{
+      right:-85px;
+  } 
+    .carousel-control-prev{
+      left:-85px;
+  }
+  .slider,.screenshot,.faq{
+    padding-bottom: 50px;
+  }
+  .dashboard-ctr {
+      /*text-align: center;*/
+      width: 1000px;
+      margin-left: 350px;
+      margin-right: 0px;
+      /* padding-left: 16%; */
+  }
+  .img-lst{
+    width:100%;
+  }
+  .img{
+    width: 50%;
+  }
+/*switch button css*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sliderbtn {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sliderbtn:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .sliderbtn {
+    background: linear-gradient(to right, #57104F 0%, #f25428 0%);
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparen*/
+}
+
+input:focus + .sliderbtn {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .sliderbtn:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.sliderbtn.round {
+  border-radius: 34px;
+}
+
+.sliderbtn.round:before {
+  border-radius: 50%;
+}
+/*switch button css*/
+
+.list{
+  padding-bottom: 10px!important;
+  padding-top: 10px!important;
+}
+.text-gred{
+    background: linear-gradient(to right, #57104F 0%, #f25428 10%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.listcirclediv{
+  text-align: right;
+}
+.listcircle{
+  vertical-align: bottom;
+}
+.listcircletext{
+  padding-left: 0px;
+}
+.enterprise{
+  margin-top: 54px!important;
+}.paypal{
+  margin-left: 43%;
+  margin-right: 43%;
+}
+.inr-wrapper {
+    padding: 200px 31px;
+}
+@media only screen and (min-width: 1440px) {
+  .pricingrow{
+    padding: 0px 226px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="mean-container"> 
+
+  <!-- Header -->
+  <div class="top-menu">
+    <div class="container">
+      <div id="body-pd">
+        <header class="header" id="header">
+          <div class="header_toggle"> <i class="fa fa-bars" aria-hidden="true" id="header-toggle"></i> </div>
+          <div class="pikpok"><img src="images/pikpok.jpg" /></div>
+          <div class="user-wrp"><img src="images/doe.png" /></div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+          <nav class="nav">
+            <div> <a href="#" class="nav_logo"> <img src="images/menu-icon.png" /> <span class="nav_logo-name"><img src="images/sprint.png" /></span> </a>
+              <div class="nav_list"> <a href="dashboard.html" class="nav_link active"> <i class="fa fa-area-chart" aria-hidden="true"></i> <span class="nav_name">Dashboard</span> </a> <a href="administration.html" class="nav_link"> <i class="fa fa-cogs" aria-hidden="true"></i> <span class="nav_name">Administration</span> </a> <a href="users.html" class="nav_link"> <i class="fa fa-users" aria-hidden="true"></i> <span class="nav_name">User Management</span> </a> <a href="health-check.html" class="nav_link"> <i class="fa fa-medkit" aria-hidden="true"></i> <span class="nav_name">Health Checks</span> </a> <a href="create-play.html" class="nav_link"> <i class="fa fa-play" aria-hidden="true"></i> <span class="nav_name">Plays</span> </a> <a href="support.html" class="nav_link"> <i class="fa fa-life-ring" aria-hidden="true"></i> <span class="nav_name">Support</span> </a> </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+
+  <!-- Inner Banner -->
+  <section class="inr-wrapper">
+    <div class="container">
+       <div class="dashboard"></div>
+       <div class="row">
+        <div class="col-12">
+          <h2>Pricing</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Inner Banner -->
+
+  <!-- Catalog -->
+  <div class="small-bg">
+    <div class="arrow-pl"></div>
+    <div class="about-bg">
+      <div class="container">
+         <div class="row">
+           <div class="col-12" style="text-align: center;">
+              <h2>Choose the Right Plan For You</h2>
+           </div>
+         </div>
+         <div class="row mb-4 pricingrow">
+           <div class="col-sm-6 col-md-6 col-xl-6">
+              <div class="white-box box-pl">
+                <ul>
+                  <li class="img-lst">
+                    <img src="images/Saly-15.png" class="img">
+                  </li>
+                  <li class="list">
+                    <h5>Run Transformations</h5>
+                  </li>
+                  <li class="list">
+                    <p><span style="font-size: 20px;font-weight: 900;">$12</span> per month per team</p>
+                  </li>
+                  <li class="list">
+                    <p style="font-size: 16px;font-weight: 900;">Billed Annually</p>
+                  </li>
+                  <li class="list">
+                    <p>
+                          Monthly       
+                          <label class="switch">
+                            <input type="checkbox">
+                            <span class="sliderbtn round"></span>
+                          </label>
+                          Annual <span class="text-gred"> Save 20%</span>
+                      </p>
+                  </li>
+                  <li>
+                    <p class="text-gred">30 Day Free Trial</p>
+                  </li>
+                </ul>
+                <div class="tribe-bx">
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Add your own health checks and plays</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Create transformation plans</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Track your transformation</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Multi squad view</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="row mt-3 mb-3">
+                    <div class="col-12 text-center">
+                      <button type="button" class="btn btn-danger">Start Free Trial</button>
+                    </div>
+                  </div>
+              </div>
+           </div>
+           <div class="col-sm-6 col-md-6 col-xl-6">
+              <div class="white-box box-pl">
+                <ul>
+                  <li class="img-lst">
+                    <img src="images/Saly-15.png" class="img">
+                  </li>
+                  <li class="list">
+                    <h5>Enterprise</h5>
+                    <p>Lorem ipsum dolor sit amet</p>
+                  </li>
+                </ul>
+                <div class="tribe-bx enterprise">
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Add your own health checks and plays</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Create transformation plans</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Track your transformation</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Multi squad view</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Free onboarding training</p>
+                       </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-sm-2 col-md-2 col-xl-2 listcirclediv">
+                          <i class="fa fa-circle listcircle" aria-hidden="true"></i>
+                       </div>
+                       <div class="col-sm-10 col-md-10 col-xl-10 listcircletext">
+                          <p style="margin-top: 4px;">Live support</p>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="row mt-3 mb-3 enterprise">
+                    <div class="col-12 text-center">
+                      <button type="button" class="btn btn-danger">Contact Sales</button>
+                    </div>
+                  </div>
+              </div>
+           </div>
+
+         </div> 
+         <div class="paypal">
+           <img src="images/paypal.jpg">
+         </div>
+      </div>
+    </div>
+  </div>
+  <!-- Catalog -->
+
+  <!-- Health check slider -->
+  <div class="container slider">
+    <div class="panel-con">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4 text-center">Health Checks and Plays<br> Included</h2>
+         </div>
+      </div>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active carousel-item-start">
+            <div class="panel-con">
+              <div class="gray-wrp">
+                <div class="row">
+                   <div class="col-sm-7 col-md-7 col-xl-7 text-left">
+                      <div class="left-con">
+                        <h2>The Spotify Health Check</h2>
+                        <p>By: Henrik Kniberg &amp; Kristian Lindwall<br>Date: Sep 2014</p>
+                        <p class="mt-3">Run the Spotify health check and get recommended practices to experiments with, workshops and training resources.</p>
+                      </div>
+                   </div>
+                   <div class="col-sm-5 col-md-5 col-xl-5">
+                      <img src="images/spotify.jpg">
+                   </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="carousel-item carousel-item-next carousel-item-start">
+            <div class="panel-con">
+              <div class="gray-wrp">
+                <div class="row">
+                   <div class="col-sm-7 col-md-7 col-xl-7 text-left">
+                      <div class="left-con">
+                        <h2>The Spotify Health Check</h2>
+                        <p>By: Henrik Kniberg &amp; Kristian Lindwall<br>Date: Sep 2014</p>
+                        <p class="mt-3">Run the Spotify health check and get recommended practices to experiments with, workshops and training resources.</p>
+                      </div>
+                   </div>
+                   <div class="col-sm-5 col-md-5 col-xl-5">
+                      <img src="images/spotify.jpg">
+                   </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span></span><span class="visually-hidden">Back</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span></span><span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Health check slider -->
+  <!-- Screenshot -->
+  <div class="container slider">
+    <div class="panel-con">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4 text-center">Buy Industry Expert Health Checks and Plays</h2>
+         </div>
+      </div>
+      <div id="carouselssControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active carousel-item-start">
+            <div class="panel-con">
+              <div class="gray-wrp">
+                <div class="row">
+                   <div class="col-sm-5 col-md-12 col-xl-12">
+                      <img src="images/placeholderss.png">
+                   </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="carousel-item carousel-item-next carousel-item-start">
+            <div class="panel-con">
+              <div class="gray-wrp">
+                <div class="row">
+                   <div class="col-sm-5 col-md-12 col-xl-12">
+                      <img src="images/placeholderss.png">
+                   </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselssControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span></span><span class="visually-hidden">Back</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselssControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span></span><span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Screenshot -->
+  <!-- FAQ -->
+  <div class="container faq">
+    <div class="panel-con">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mb-4 text-center">Frequently Asked Questions</h2>
+        </div>        
+      </div>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              How difficult is it to cancel?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">You can opt out at any time. We will store your data and you’l have access to it for up to a year.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              How do I get advice on transformations?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">You should rely on your internal coaches. This tool is there to help them. We also provide additional training on request to become a certified smart sprint coach. 
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+             Can I loose my data?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">We have backups of all your data.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              How many users can we add?
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">You can as many as you want or need to.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+              Do we issue refunds?
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">No, unfortunately we don’t. But if you have a issue please reach out to us. We would like to hear from you to find out what we can do to improve.</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FAQ -->
+
+  <!-- Footer -->
+  <footer class="pd-wrp">
+    <div class="container">
+     <div class="orange-wrp">
+       <h2>Need Support?</h2>
+       <p><button type="button" class="btn btn-black">Contact us</button></p>
+     </div>
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-xl-4">
+          <h3>Legacy</h3>
+          <ul class="footer_list">
+            <li><a href="about-us.html">About us</a></li>
+            <li><a href="partner-programme.html">Partner programme</a></li>
+            <li><a href="certified-training.html">Certified training</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-4 col-xl-4">
+          <h3>Legal</h3>
+          <ul class="footer_list">
+            <li><a href="terms-and-conditions.html">Terms and conditions</a></li>
+            <li><a href="data-privacy.html">Data privacy</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-4 col-xl-4">
+          <h3>Community</h3>
+          <div class="linked-icon"><a href="#"><img src="images/linked-icon.png" /></a></div>
+        </div>
+      </div>
+      <div class="footer-con">
+        <p>smart sprint © 2021 - future</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
+</div>
+
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#filter-wrp").click(function(){
+    $("#hide-panel").toggle();
+  });
+});
+</script>
+<script>
+jQuery(function(){
+  var j = jQuery; //Just a variable for using jQuery without conflicts
+  var addInput = '#qty'; //This is the id of the input you are changing
+  var n = 1; //n is equal to 1
+  
+  //Set default value to n (n = 1)
+  j(addInput).val(n);
+
+  //On click add 1 to n
+  j('.plus').on('click', function(){
+    j(addInput).val(++n);
+  })
+
+  j('.min').on('click', function(){
+    //If n is bigger or equal to 1 subtract 1 from n
+    if (n >= 1) {
+      j(addInput).val(--n);
+    } else {
+      //Otherwise do nothing
+    }
+  });
+});
+</script>
+<script type='text/javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+
+const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+const toggle = document.getElementById(toggleId),
+nav = document.getElementById(navId),
+bodypd = document.getElementById(bodyId),
+headerpd = document.getElementById(headerId)
+
+// Validate that all variables exist
+if(toggle && nav && bodypd && headerpd){
+toggle.addEventListener('click', ()=>{
+// show navbar
+nav.classList.toggle('show')
+
+// add padding to body
+bodypd.classList.toggle('body-pd')
+// add padding to header
+headerpd.classList.toggle('body-pd')
+})
+}
+}
+
+showNavbar('header-toggle','nav-bar','body-pd','header')
+
+/*===== LINK ACTIVE =====*/
+const linkColor = document.querySelectorAll('.nav_link')
+
+function colorLink(){
+if(linkColor){
+linkColor.forEach(l=> l.classList.remove('active'))
+this.classList.add('active')
+}
+}
+linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+// Your code to run since DOM is loaded and ready
+});</script>
+
+</body>
+</html>

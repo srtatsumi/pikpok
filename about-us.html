@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name='viewport'>
+<title>Smart Print</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+<link rel="stylesheet" type="text/css" href="css/aboutstyle.css">
+<style>
+  .show{
+    display:block;
+  }
+  .hide{
+    display: none;
+  }
+  .orbit{
+    z-index: 99;
+  }
+</style>
+</head>
+<body>
+<div class="mean-container"> 
+  <!-- Header -->
+  <div class="top-menu">
+    <div class="container">
+      <div id="body-pd">
+        <header class="header" id="header">
+          <div class="header_toggle"> <i class="fa fa-bars" aria-hidden="true" id="header-toggle"></i> </div>
+          <div class="pikpok"><img src="images/pikpok.jpg" /></div>
+          <div class="user-wrp"><img src="images/doe.png" /></div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+          <nav class="nav">
+            <div> <a href="#" class="nav_logo"> <img src="images/menu-icon.png" /> <span class="nav_logo-name"><img src="images/sprint.png" /></span> </a>
+              <div class="nav_list"> <a href="dashboard.html" class="nav_link active"> <i class="fa fa-area-chart" aria-hidden="true"></i> <span class="nav_name">Dashboard</span> </a> <a href="administration.html" class="nav_link"> <i class="fa fa-cogs" aria-hidden="true"></i> <span class="nav_name">Administration</span> </a> <a href="users.html" class="nav_link"> <i class="fa fa-users" aria-hidden="true"></i> <span class="nav_name">User Management</span> </a> <a href="health-check.html" class="nav_link"> <i class="fa fa-medkit" aria-hidden="true"></i> <span class="nav_name">Health Checks</span> </a> <a href="create-play.html" class="nav_link"> <i class="fa fa-play" aria-hidden="true"></i> <span class="nav_name">Plays</span> </a> <a href="support.html" class="nav_link"> <i class="fa fa-life-ring" aria-hidden="true"></i> <span class="nav_name">Support</span> </a> </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+
+  <!-- Inner Banner -->
+  <section class="inr-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>What we are about</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Inner Banner -->
+
+<!-- About -->
+  <div class="about-bg">
+    <div class="arrow-pl"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-xl-6 orbit">
+          <!-- <img src="images/about-icon.jpg" /> -->
+          <div class="border-circle-1">
+            <div class="border-circle-2" id="btn-show" onclick="">
+              <div class="button-circle circle1" id="event-btn" onclick="events()">
+                <img src="images/events.svg" alt="">
+                <label for="#">Events</label>
+              </div>
+              <div class="button-circle circle2"  id="who-btn" onclick="who()">
+                <img src="images/who.svg" alt="">
+                <label for="#">Who</label>
+              </div>
+              <div class="button-circle circle3 btnactive"  id="vision-btn" onclick="vision()">
+                <img src="images/vision.svg" alt="">
+                <label for="#">Vision</label>
+              </div>
+              <div class="button-circle circle4" id="value-btn" onclick="value()">
+                <img src="images/values.svg" alt="">
+                <label for="#">Values</label>
+              </div>
+              <div class="button-circle circle5" id="why-btn" onclick="why()">
+                <img src="images/why.svg" alt="">
+                <label for="#">Why</label>
+              </div>
+              <div class="inner-circle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xl-6 show" id="vision">
+           <div class="about-text" >
+              <h6>Vision</h6>
+              <p><strong>For</strong> team coaches,<br><strong>Who</strong> wants to run small or scaled transformations,<br><strong>The</strong> smart sprint app is a coaching platform<br><strong>That</strong> facilitates the tranformational process.<br><strong>Unlike</strong> other retrospectives tools<br><strong>Our product</strong> works towards a desired goal using<br>system coaching principles</p>
+           </div> 
+        </div>
+        <div class="col-sm-6 col-md-6 col-xl-6  hide" id="values" >
+          <div class="about-text">
+            <h6>Values</h6>
+            <p>Being vulnerable, Innovating, Listening, Helping, Having fun</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xl-6  hide" id="who">
+          <div class="about-text">
+          <h6>Who</h6>
+          <p>We are a team of passionate Agile Coaches working remotely in New Zealand. We enjoy spending time outdoors with friends and family and have a abitious life goals like doing the ironman 70.3 next year in Taupo, having more fun, and having a postive impact on people and the environment. </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xl-6  hide" id="why">
+          <div class="about-text">
+          <h6>Why</h6>
+          <p>There were two images that  resonated with us during a transformational life coaching course we attended that reminded us why we are doing this... </p>
+          <p>The first one was when the trainer explained that coaching is like dropping a peble in the water. Evey person you impact creates a riple effect for others around them. </p>
+          <p>The second image was of a a gyeser. A gyeser is a powerful force of pressure under the ground that explodes in the air and at aww eveone is amazed. She explained that we don’t see peoples full potential until we create the environment for it to surface.</p>
+          <p>We want to support and enable people to maximize their potential.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xl-6  hide" id="event">
+          <div class="about-text">
+          <h6>Event</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- About -->
+
+
+<!-- Footer -->
+<footer class="pd-box">
+  <div class="container">
+    <div class="footer-con">
+      <p>smart sprint © 2021 - future</p>
+    </div>
+  </div>
+</footer>
+<!-- Footer -->
+
+</div>
+
+
+
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+  function events(){
+    var id = document.querySelector('.btnactive').id;
+    let className = document.getElementById(id);
+    className.classList.remove("btnactive");
+    var Class = document.getElementById("event-btn");
+    Class.classList.add('btnactive');
+
+    var divid = document.querySelector('.show').id;
+    console.log(divid);
+    let divName = document.getElementById(divid);
+    console.log(divName);
+    divName.classList.add("hide");
+    divName.classList.remove("show");
+
+    var divClass = document.getElementById("event");
+    divClass.classList.add('show');
+    divClass.classList.remove("hide");
+  }
+  function who(){
+    var id = document.querySelector('.btnactive').id;
+    let className = document.getElementById(id);
+    className.classList.remove("btnactive");
+    var Class = document.getElementById("who-btn");
+    Class.classList.add('btnactive');
+    
+
+    var divid = document.querySelector('.show').id;
+    console.log(divid);
+    let divName = document.getElementById(divid);
+    console.log(divName);
+    divName.classList.add("hide");
+    divName.classList.remove("show");
+
+    var divClass = document.getElementById("who");
+    divClass.classList.add('show');
+    divClass.classList.remove("hide");
+  }
+
+  function why(){
+    var id = document.querySelector('.btnactive').id;
+    let className = document.getElementById(id);
+    className.classList.remove("btnactive");
+    var Class = document.getElementById("why-btn");
+    Class.classList.add('btnactive');
+
+    var divid = document.querySelector('.show').id;
+    console.log(divid);
+    let divName = document.getElementById(divid);
+    console.log(divName);
+    divName.classList.add("hide");
+    divName.classList.remove("show");
+
+    var divClass = document.getElementById("why");
+    divClass.classList.add('show');
+    divClass.classList.remove("hide");
+  }
+  function vision(){
+    var id = document.querySelector('.btnactive').id;
+    let className = document.getElementById(id);
+    className.classList.remove("btnactive");
+    var Class = document.getElementById("vision-btn");
+    Class.classList.add('btnactive');
+
+    var divid = document.querySelector('.show').id;
+    console.log(divid);
+    let divName = document.getElementById(divid);
+    console.log(divName);
+    divName.classList.add("hide");
+    divName.classList.remove("show");
+
+    var divClass = document.getElementById("vision");
+    divClass.classList.add('show');
+    divClass.classList.remove("hide");
+
+
+  }
+  function value(){
+    var id = document.querySelector('.btnactive').id;
+    let className = document.getElementById(id);
+    className.classList.remove("btnactive");
+    var Class = document.getElementById("value-btn");
+    Class.classList.add('btnactive');
+
+
+
+    var divid = document.querySelector('.show').id;
+    console.log(divid);
+    let divName = document.getElementById(divid);
+    console.log(divName);
+    divName.classList.add("hide");
+    divName.classList.remove("show");
+
+    var divClass = document.getElementById("values");
+    divClass.classList.add('show');
+    divClass.classList.remove("hide");
+  }
+
+  
+</script>
+
+</body>
+</html>

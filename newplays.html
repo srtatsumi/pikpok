@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name='viewport'>
+<title>Smart Print</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/boxicons.min.css">
+<link rel="stylesheet" type="text/css" href="css/newsplaystyle.css">
+<link rel="stylesheet" type="text/css" href="css/newplaysstyle.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css">   -->
+<style type="text/css">
+
+  .search input{
+    width:95%;
+    box-shadow: 0px 0px 0px #cccccc;
+    border-top:0px solid!important;
+    border-right:0px solid!important;
+    border-left:0px solid!important; 
+    border-bottom: 1px solid black!important;
+  }
+  .ico{
+    position: relative;
+    left:18px;
+  }
+  .flex-container {
+    display: flex;
+    margin: 0 20%;
+  }
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding-left: 20px;
+    padding-top:3px;
+    width: 100%;
+    height:50px;
+    font-size: 30px;
+  }
+  .videos{
+    position: relative;
+  }
+  h4{
+    font-weight: 900;
+  }
+  .fa-ellipsis-v{
+    position: absolute;
+    left: 84%;
+    top: 0%;
+    font-size: 140%;
+  }
+  .dropbtn {
+    /*background-color: #4CAF50;*/
+    /*color: white;*/
+    padding: 16px;
+    /*font-size: 16px;*/
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: unset!important;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    top: 54px;
+    left: 50%;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background: linear-gradient(to right, #57104F 0%, #f25428 95%);
+    color:white;
+  }
+  .fa-thumbs-up{
+    background-color: grey;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .fa-thumbs-up:hover{
+    background: linear-gradient(to left, #57104F 0%, #f25428 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .filtwer{
+    top: 125px;
+    left: 75%;
+    z-index: 99;
+  }
+
+  @media screen and (max-width: 1024px) {
+    
+  }
+  @media screen and (max-width: 768px) {
+
+  }
+  @media screen and (max-width: 512px) {
+  
+  }
+  @media screen and (max-width: 426px) {
+
+  }
+  @media screen and (max-width: 376px) {
+
+  }
+
+  
+</style>
+</head>
+<body>
+<div class="mean-container"> 
+  <!-- Header -->
+  <div class="top-menu">
+    <div class="container">
+      <div id="body-pd">
+        <header class="header" id="header">
+          <div class="header_toggle"> <i class="fa fa-bars" aria-hidden="true" id="header-toggle"></i> </div>
+          <div class="pikpok"><img src="images/pikpok.jpg" /></div>
+          <div class="user-wrp"><img src="images/doe.png" /></div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+          <nav class="nav">
+            <div> <a href="#" class="nav_logo"> <img src="images/menu-icon.png" /> <span class="nav_logo-name"><img src="images/sprint.png" /></span> </a>
+              <div class="nav_list"> <a href="dashboard.html" class="nav_link active"> <i class="fa fa-area-chart" aria-hidden="true"></i> <span class="nav_name">Dashboard</span> </a> <a href="administration.html" class="nav_link"> <i class="fa fa-cogs" aria-hidden="true"></i> <span class="nav_name">Administration</span> </a> <a href="users.html" class="nav_link"> <i class="fa fa-users" aria-hidden="true"></i> <span class="nav_name">User Management</span> </a> <a href="health-check.html" class="nav_link"> <i class="fa fa-medkit" aria-hidden="true"></i> <span class="nav_name">Health Checks</span> </a> <a href="create-play.html" class="nav_link"> <i class="fa fa-play" aria-hidden="true"></i> <span class="nav_name">Plays</span> </a> <a href="support.html" class="nav_link"> <i class="fa fa-life-ring" aria-hidden="true"></i> <span class="nav_name">Support</span> </a> </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header --> 
+  
+  <!-- Inner Banner -->
+  <section class="inr-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>Plays</h2>
+          <p>Here is a list of improvement tools shared by other passionate <br> community members</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Inner Banner --> 
+
+  <!-- About -->
+  <div class="small-bg">
+    <div class="arrow-pl"></div>
+    <div class="panel">
+      <div class="container">
+        <div class="search">
+              <div>
+                46 Results
+              </div>
+              <form>
+                <i class="fa fa-search ico" aria-hidden="true"></i>
+                <input type="text" name="" placeholder="Search">
+                
+                <div class="dropdown">
+                  <!-- <img src="images/icon-round.png" class=" fa-ellipsis-v dropbtn"> -->
+                  <i class="fa fa-filter" aria-hidden="true"></i> 
+                  <div class="dropdown-content filtwer">
+                    <a href="#">All</a>
+                    <a href="#">My own</a>
+                    <a href="#">My organisation</a>
+                    <a href="#">smart sprint</a>
+                  </div>
+                </div>   
+              </form>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons  -->
+  <div class="btn-container">
+    <div class="btns">
+      <button href="#" class="active">Workshop</button>
+      <div class="filter">
+        <h4>Topics</h4>
+        <div class="filter-elements">
+          Leadership &nbsp; 
+          <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+        <div class="filter-elements">
+          Culture &nbsp; 
+          <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+        <div class="filter-elements">
+          People &nbsp; 
+          <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+        <div class="filter-elements">
+          Strategy &nbsp; 
+          <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+        <div class="filter-elements">
+          Structure &nbsp; <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+        <div class="filter-elements">
+          Process &nbsp; 
+          <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+        <div class="filter-elements">
+          Others &nbsp; 
+          <div class="checkbox">
+            <input type="checkbox" name="#" id="#">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <button href="#">Training</button>
+      <div class="videos">
+        <div class="dropdown">
+          <img src="images/icon-round.png" class=" fa-ellipsis-v dropbtn">
+          <div class="dropdown-content">
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+            <a href="#">Mark as Private</a>
+            <a href="#">Mark as Public</a>
+          </div>
+        </div>
+        <video src="#"></video>
+        <h4>4 L Retrospective</h4>
+        <p>By: Henry kniberg & Kristian Lindwall, <br> Sep 2014</p><br>
+        <p>Run the Spotify health check and get recommended practices to experiments with, workshops and training resources.</p>
+        <div class="thums-up-icon">
+          <i class="fa fa-thumbs-up"></i>
+        </div>
+      </div>
+      <div class="videos">
+        <div class="dropdown">
+          <img src="images/icon-round.png" class=" fa-ellipsis-v dropbtn">
+          <div class="dropdown-content">
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+            <a href="#">Mark as Private</a>
+            <a href="#">Mark as Public</a>
+          </div>
+        </div>
+        <video src="#"></video>
+        <h4>4 L Retrospective</h4>
+        <p>By: Henry kniberg & Kristian Lindwall, <br> Sep 2014</p><br>
+        <p>Run the Spotify health check and get recommended practices to experiments with, workshops and training resources.</p>
+        <div class="thums-up-icon">
+          <i class="fa fa-thumbs-up"></i>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <button href="#">Practice</button>
+      <div class="videos">
+        <div class="dropdown">
+          <img src="images/icon-round.png" class=" fa-ellipsis-v dropbtn">
+          <div class="dropdown-content">
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+            <a href="#">Mark as Private</a>
+            <a href="#">Mark as Public</a>
+          </div>
+        </div>
+        <video src="#"></video>
+        <h4>4 L Retrospective</h4>
+        <p>By: Henry kniberg & Kristian Lindwall, <br> Sep 2014</p><br>
+        <p>Run the Spotify health check and get recommended practices to experiments with, workshops and training resources.</p>
+        <div class="thums-up-icon">
+          <i class="fa fa-thumbs-up"></i>
+        </div>
+      </div>
+      <div class="videos">
+        <video src="#"></video>
+        <div class="dropdown">
+          <img src="images/icon-round.png" class=" fa-ellipsis-v dropbtn">
+          <div class="dropdown-content">
+            <a href="#">Edit</a>
+            <a href="#">Delete</a>
+            <a href="#">Mark as Private</a>
+            <a href="#">Mark as Public</a>
+          </div>
+        </div>
+        <h4>4 L Retrospective</h4>
+        <p>By: Henry kniberg & Kristian Lindwall, <br> Sep 2014</p><br>
+        <p>Run the Spotify health check and get recommended practices to experiments with, workshops and training resources.</p>
+        <div class="thums-up-icon">
+          <i class="fa fa-thumbs-up"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- filter section  -->
+
+<!-- About --> 
+
+<!-- Footer -->
+<footer class="pd-box">
+  <div class="container">
+    <div class="footer-con">
+      <p>smart sprint © 2021 - future</p>
+    </div>
+  </div>
+</footer>
+<!-- Footer -->
+</div>
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script> 
+<script>
+jQuery(function(){
+  var j = jQuery; //Just a variable for using jQuery without conflicts
+  var addInput = '#qty'; //This is the id of the input you are changing
+  var n = 1; //n is equal to 1
+  
+  //Set default value to n (n = 1)
+  j(addInput).val(n);
+
+  //On click add 1 to n
+  j('.plus').on('click', function(){
+    j(addInput).val(++n);
+  })
+
+  j('.min').on('click', function(){
+    //If n is bigger or equal to 1 subtract 1 from n
+    if (n >= 1) {
+      j(addInput).val(--n);
+    } else {
+      //Otherwise do nothing
+    }
+  });
+});
+</script> 
+<script type='text/javascript'>document.addEventListener("DOMContentLoaded", function(event) {
+
+const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+const toggle = document.getElementById(toggleId),
+nav = document.getElementById(navId),
+bodypd = document.getElementById(bodyId),
+headerpd = document.getElementById(headerId)
+
+// Validate that all variables exist
+if(toggle && nav && bodypd && headerpd){
+toggle.addEventListener('click', ()=>{
+// show navbar
+nav.classList.toggle('show')
+
+// add padding to body
+bodypd.classList.toggle('body-pd')
+// add padding to header
+headerpd.classList.toggle('body-pd')
+})
+}
+}
+
+showNavbar('header-toggle','nav-bar','body-pd','header')
+
+/*===== LINK ACTIVE =====*/
+const linkColor = document.querySelectorAll('.nav_link')
+
+function colorLink(){
+if(linkColor){
+linkColor.forEach(l=> l.classList.remove('active'))
+this.classList.add('active')
+}
+}
+linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+// Your code to run since DOM is loaded and ready
+});</script>
+</body>
+</html>
